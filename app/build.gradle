@@ -20,7 +20,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
     //dataBinding {
     //    enabled = true
     //    enabledForTests = true
@@ -55,12 +57,9 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
     implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
 
-    // Dependencies for local unit tests
-    testImplementation "junit:junit:$junitVersion"
-
-    // AndroidX Test - Instrumented testing
-    androidTestImplementation "androidx.test.ext:junit:$androidXTestExtKotlinRunnerVersion"
-    androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     // Kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
